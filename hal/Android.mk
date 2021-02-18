@@ -4,20 +4,6 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := libqcaudioperf
-
-LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
-LOCAL_SHARED_LIBRARIES += libbase libhidlbase libhwbinder libutils android.hardware.power@1.2 liblog
-LOCAL_SRC_FILES := audio_perf.cpp
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := qti
-LOCAL_VENDOR_MODULE := true
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
 LOCAL_ARM_MODE := arm
 
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
@@ -388,8 +374,6 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_GCOV)),true)
     LOCAL_CPPFLAGS += --coverage -fprofile-arcs -ftest-coverage
     LOCAL_STATIC_LIBRARIES += libprofile_rt
 endif
-
-LOCAL_SHARED_LIBRARIES += libqcaudioperf
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_FM_TUNER_EXT)),true)
     LOCAL_CFLAGS += -DFM_TUNER_EXT_ENABLED
