@@ -617,7 +617,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libicc
 LOCAL_VENDOR_MODULE := true
 
-PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
+PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
 ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lahaina holi lito bengal atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
@@ -684,7 +684,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libsynth
 LOCAL_VENDOR_MODULE := true
 
-PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
+PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
 ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lahaina holi lito bengal atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
@@ -1092,7 +1092,7 @@ LOCAL_MODULE := libautohal
 
 LOCAL_VENDOR_MODULE := true
 
-PRIMARY_HAL_PATH := vendor/qcom/opensource/audio-hal/primary-hal/hal
+PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
 ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lahaina holi lito atoll bengal sdm660 msm8937 msm8953 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
@@ -1161,7 +1161,7 @@ LOCAL_SRC_FILES:= \
         power_policy_launcher.cpp
 
 LOCAL_C_INCLUDES:= \
-        vendor/qcom/opensource/audio-hal/primary-hal/hal \
+        $(call project-path-for,qcom-audio)/hal \
         system/media/audio/include
 
 LOCAL_SHARED_LIBRARIES:= \
